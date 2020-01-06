@@ -1,5 +1,4 @@
 source ~/git-prompt.sh
-export PATH=$PATH:$HOME/.meteor
 GIT_PS1_SHOWDIRTYSTATE=true
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 

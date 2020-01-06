@@ -41,6 +41,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'leafoftree/vim-vue-plugin'
 Plugin 'mhartington/oceanic-next'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -55,6 +56,7 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+let g:vim_vue_plugin_load_full_syntax = 1
 let g:deoplete#enable_at_startup = 1
 let g:javascript_plugin_jsdoc = 1
 set re=1

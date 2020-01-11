@@ -26,7 +26,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # fixes ls colors of terminal
-eval $(dircolors -b /Users/stephen/.dircolors)
+eval $(dircolors -b ~/.dircolors)
 alias ls='ls -aGFh --color="always"'
 # reloads terminal with new bashrc
 alias rebash='source ~/.bashrc'

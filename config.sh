@@ -47,9 +47,15 @@ function copyDotfiles() {
   echo "copied dotfiles..."
 }
 
+function installGitPrompt() {
+  echo "installing git-prompt.sh..."
+  command curl -XGET https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > ~/git-prompt.sh
+}
+
 copyDotfiles &&
 installBrew &&
 installGit &&
 installVundle &&
 installDircolors &&
+installGitPrompt &&
 copyMaxfilesPlist

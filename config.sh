@@ -14,8 +14,18 @@ function installGit() {
     if command brew updgrade git; then
       echo "git sucessfully upgraded"
     else
-      command "uh-oh, git install and git upgrade both failed"
+      echo "uh-oh, git install and git upgrade both failed"
+      return 1
     fi
+  fi
+}
+
+function installDircolors() {
+  echo "retrieving dircolors..."
+  if command brew install coreutils; then
+      echo "installed coreutils"
+      command mkdir ~/.dircolors
+      command git clone https://github.com/gibbling666/dircolors.git ~/.dircolors
   fi
 }
 
@@ -27,9 +37,19 @@ function installVundle() {
   fi  
 }
 
+function copyMaxfilesPlist() {
+  echo "copying maxfiles.plist..."
+  command sudo cp limit.maxfiles.plist /Library/LaunchDaemons/
+}
 
- cp src/.??* ~ &&
- echo "copied dotfiles..."  &&
+function copyDotfiles() {
+  command cp -r src/. ~
+  echo "copied dotfiles..."
+}
+
+copyDotfiles &&
 installBrew &&
 installGit &&
-installVundle
+installVundle &&
+installDircolors &&
+copyMaxfilesPlist
